@@ -1,4 +1,3 @@
-                                                        
 user www-data;
 worker_processes auto;
 worker_cpu_affinity auto;
@@ -33,9 +32,11 @@ http {
         sendfile on;
         tcp_nopush on; # envoyer les en-têtes en un seul paquet
         tcp_nodelay on; # désactiver l'algorithme de Nagle
+
         # Keep-alive
         keepalive_timeout 65; # secondes
         keepalive_requests 1000; # requêtes max par connexion keep-alive
+
         # Tailles / timeouts client
         client_max_body_size 10m;
         client_body_timeout 30;
